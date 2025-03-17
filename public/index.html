@@ -3,32 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demo Web</title>
+  <title>Página Web con Usuarios y Eventos</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Demo de Página Web con Base de Datos</h1>
+  <h1>Contenido de la Base de Datos</h1>
 
-  <h2>Agregar Usuario</h2>
-  <form id="formUsuario">
-    <input type="text" id="nombre" placeholder="Nombre" required>
-    <input type="email" id="email" placeholder="Correo electrónico" required>
-    <button type="submit">Agregar Usuario</button>
-  </form>
-
-  <h2>Agregar Evento</h2>
-  <form id="formEvento">
-    <input type="number" id="id_usuario" placeholder="ID Usuario" required>
-    <input type="text" id="nombre_evento" placeholder="Nombre del Evento" required>
-    <input type="date" id="fecha_evento" required>
-    <button type="submit">Agregar Evento</button>
-  </form>
-
+  <!-- Sección para mostrar usuarios -->
   <h2>Usuarios</h2>
-  <ul id="usuariosLista"></ul>
+  <ul id="usuarios-list"></ul>
 
+  <!-- Sección para mostrar eventos -->
   <h2>Eventos</h2>
-  <ul id="eventosLista"></ul>
+  <ul id="eventos-list"></ul>
 
   <script src="script.js"></script>
 </body>

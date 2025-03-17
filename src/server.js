@@ -7,6 +7,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// Servir archivos estáticos desde la carpeta 'public'
+app.use(express.static('public'));
+
 // Conectar a la base de datos
 const db = new sqlite3.Database("./database.db", (err) => {
   if (err) {
