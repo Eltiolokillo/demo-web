@@ -1,0 +1,81 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  h1 {
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Contenedor para organizar las secciones */
+  .contenedor {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;  /* Limita el tamaño del contenedor */
+  }
+  
+  /* Sección de usuarios */
+  .usuarios {
+    flex: 1;  /* Toma el 50% del espacio disponible */
+    margin-right: 20px;
+  }
+  
+  /* Sección de eventos */
+  .eventos {
+    flex: 1;  /* Toma el 50% del espacio disponible */
+    margin-left: 20px;
+  }
+  
+  /* Estilos para los formularios */
+  form {
+    margin-top: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Estilos para las listas */
+  ul {
+    padding-left: 20px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  

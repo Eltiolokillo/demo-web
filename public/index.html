@@ -4,18 +4,88 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página Web con Usuarios y Eventos</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .section {
+      width: 45%;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: darkred;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input {
+      padding: 5px;
+      margin: 5px;
+      width: 100%;
+    }
+
+    select {
+      padding: 5px;
+      margin: 5px;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-  <h1>Contenido de la Base de Datos</h1>
 
-  <!-- Sección para mostrar usuarios -->
-  <h2>Usuarios</h2>
-  <ul id="usuarios-list"></ul>
+  <div class="section">
+    <h2>Usuarios</h2>
+    <ul id="usuarios-list"></ul>
 
-  <!-- Sección para mostrar eventos -->
-  <h2>Eventos</h2>
-  <ul id="eventos-list"></ul>
+    <!-- Formulario para agregar usuario -->
+    <form id="usuario-form">
+      <input type="text" id="nombre-usuario" placeholder="Nombre del usuario" required>
+      <input type="email" id="email-usuario" placeholder="Email del usuario" required>
+      <button type="submit">Agregar Usuario</button>
+    </form>
+  </div>
+
+  <div class="section">
+    <h2>Eventos</h2>
+    <ul id="eventos-list"></ul>
+
+    <!-- Formulario para agregar evento -->
+    <form id="evento-form">
+      <input type="text" id="nombre-evento" placeholder="Nombre del evento" required>
+      <select id="id-usuario" required></select>
+      <input type="date" id="fecha-evento" required>
+      <button type="submit">Agregar Evento</button>
+    </form>
+  </div>
 
   <script src="script.js"></script>
 </body>

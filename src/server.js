@@ -99,3 +99,32 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en puerto ${PORT}`);
 });
+
+// Ruta para eliminar un usuario
+app.delete("/api/usuarios/:id", (req, res) => {
+    const { id } = req.params;
+    db.run(`DELETE FROM usuarios WHERE id = ?`, [id], function (err) {
+      if (err) {
+        res.status(500).send(err.message);
+      } else if (this.changes === 0) {
+        res.status(404).send("Usuario no encontrado");
+      } else {
+        res.status(200).send("Usuario eliminado");
+      }
+    });
+  });
+
+  // Ruta para eliminar un evento
+app.delete("/api/eventos/:id", (req, res) => {
+    const { id } = req.params;
+    db.run(`DELETE FROM eventos WHERE id = ?`, [id], function (err) {
+      if (err) {
+        res.status(500).send(err.message);
+      } else if (this.changes === 0) {
+        res.status(404).send("Evento no encontrado");
+      } else {
+        res.status(200).send("Evento eliminado");
+      }
+    });
+  });
+  
