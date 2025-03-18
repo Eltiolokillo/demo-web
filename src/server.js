@@ -113,13 +113,15 @@ app.post("/api/eventos", (req, res) => {
 app.delete("/api/eventos/:id", (req, res) => {
   const { id } = req.params;
   db.run(`DELETE FROM eventos WHERE id = ?`, [id], function (err) {
-    if (err) {
-      res.status(500).send(err.message);
-    } else if (this.changes === 0) {
-      res.status(404).send("Evento no encontrado");
-    } else {
-      res.status(200).send("Evento eliminado");
-    }
+      if (err) {
+          console.error("❌ Error al eliminar evento:", err.message);
+          res.status(500).send(err.message);
+      } else if (this.changes === 0) {
+          res.status(404).send("Evento no encontrado");
+      } else {
+          console.log("✅ Evento eliminado correctamente");
+          res.status(200).send("Evento eliminado");
+      }
   });
 });
 
