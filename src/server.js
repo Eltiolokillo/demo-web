@@ -98,11 +98,17 @@ app.post("/api/eventos", (req, res) => {
 const PORT = process.env.PORT || 3000;
 const path = require("path");
 
+// Servir archivos estáticos correctamente
 app.use(express.static(path.join(__dirname, "public")));
 
-// Servir el archivo index.html
+// Servir el archivo index.html en la raíz
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+// Capturar rutas no manejadas y devolver 404
+app.use((req, res) => {
+  res.status(404).send("Página no encontrada");
 });
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en puerto ${PORT}`);
