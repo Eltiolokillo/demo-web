@@ -98,6 +98,8 @@ app.post("/api/eventos", (req, res) => {
 const PORT = process.env.PORT || 3000;
 const path = require("path");
 
+app.use(express.static(path.join(__dirname, "public")));
+
 // Servir el archivo index.html
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
