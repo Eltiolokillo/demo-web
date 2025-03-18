@@ -96,6 +96,12 @@ app.post("/api/eventos", (req, res) => {
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;
+const path = require("path");
+
+// Servir el archivo index.html
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en puerto ${PORT}`);
 });

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Función para cargar los usuarios desde la API
     function cargarUsuarios() {
-      fetch('http://localhost:3000/api/usuarios')
+      fetch('/api/usuarios')
         .then(response => response.json())
         .then(data => {
           const listaUsuarios = document.getElementById('usuarios-list');
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Función para eliminar un usuario
     function eliminarUsuario(id) {
         console.log("ID del usuario a eliminar:", id);  // Imprimir el ID del usuario
-        fetch(`http://localhost:3000/api/usuarios/${id}`, {
+        fetch(`/api/usuarios/${id}`, {
           method: 'DELETE',
         })
           .then(response => {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
     // Función para cargar los eventos desde la API
     function cargarEventos() {
-      fetch('http://localhost:3000/api/eventos')
+      fetch('/api/eventos')
         .then(response => response.json())
         .then(data => {
           const listaEventos = document.getElementById('eventos-list');
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Función para eliminar un evento
     function eliminarEvento(id) {
         console.log("ID del evento a eliminar:", id);  // Imprimir el ID del evento
-        fetch(`http://localhost:3000/api/eventos/${id}`, {
+        fetch(`/api/eventos/${id}`, {
           method: 'DELETE',
         })
           .then(response => {
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
         email: emailUsuario,
       };
   
-      fetch('http://localhost:3000/api/usuarios', {
+      fetch('/api/usuarios', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
         fecha: fechaEvento,
       };
   
-      fetch('http://localhost:3000/api/eventos', {
+      fetch('/api/eventos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
